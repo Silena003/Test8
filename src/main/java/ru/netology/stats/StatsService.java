@@ -1,30 +1,30 @@
 package ru.netology.stats;
 
 public class StatsService {
-        public int calculateSum(int[] sales) {
-            int sum = 0;
-            for (int sale : sales) {
-                sum += sale;
+    public int calculateSum(int[] sales) {
+        int sum = 0;
+        for (int sale : sales) {
+            sum += sale;
 
+        }
+        return sum;
+    }
+
+    public int averageAmount(int[] sales) {
+        return calculateSum(sales) / sales.length;
+    }
+
+    public int maxSales(int[] sales) {
+        int maxMonth = 0;
+        int month = 0;
+        for (int sale : sales) {
+            if (sale >= sales[maxMonth]) {
+                maxMonth = month;
             }
-            return sum;
+            month = month + 1;
         }
-
-        public int averageAmount(int[] sales) {
-            return calculateSum(sales) / sales.length;
-        }
-
-        public int maxSales(int[] sales) {
-            int maxMonth = 0;
-            int month = 0;
-            for (int sale : sales) {
-                if (sale >= sales [maxMonth]) {
-                    maxMonth = month;
-                }
-                    month = month + 1;
-            }
-            return maxMonth + 1;
-        }
+        return maxMonth + 1;
+    }
 
     public int minSales(int[] sales) {
         int minMonth = 0;
@@ -40,24 +40,38 @@ public class StatsService {
         }
         return minMonth + 1;
     }
+
     public int belowAverageSales(int[] sales) {
-        int numberMonth = 0;
         int average = averageAmount(sales);
+        int monthCount = 0;
         for (int sale : sales) {
 
-            if (sales[numberMonth] < average) {
-                numberMonth++;
+            if (sale > average) {
+                monthCount++;
             }
 
         }
-        return numberMonth + 1;
+        return monthCount;
     }
 
+    public int aboveAverageSales(int[] sales) {
+        int average = averageAmount(sales);
+        int monthCount = 0;
+        for (int sale : sales) {
+
+            if (sale < average) {
+                monthCount++;
+            }
+
+        }
+        return monthCount;
     }
-       // 1.Сумму всех продаж +
-     //   2.Среднюю сумму продаж в месяц+
-      //  3.Номер месяца, в котором был пик продаж (осуществлены продажи на максимальную сумму)*+
-       // 4.Номер месяца, в котором был минимум продаж (осуществлены продажи на минимальную сумму)*+
-      //  5.Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
-       // 6.Кол-во месяцев, в которых продажи были выше среднего (см. п.2)
+}
+
+// 1.Сумму всех продаж +
+// 2.Среднюю сумму продаж в месяц+
+// 3.Номер месяца, в котором был пик продаж (осуществлены продажи на максимальную сумму)*+
+// 4.Номер месяца, в котором был минимум продаж (осуществлены продажи на минимальную сумму)*+
+// 5.Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
+// 6.Кол-во месяцев, в которых продажи были выше среднего (см. п.2)
 

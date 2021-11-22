@@ -5,46 +5,42 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
+    private final int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    private final StatsService service = new StatsService();
 
     @Test
     void calculateSum() {
-            StatsService service = new StatsService();
-            int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-            int expected = 180;
-            int actual = service.calculateSum(managerSales);
-            assertEquals(expected, actual);
+
+        assertEquals(180, service.calculateSum(managerSales));
     }
 
     @Test
     void maxSales() {
-        StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 8;
-        int actual = service.maxSales(managerSales);
-        assertEquals(expected, actual);
+
+        assertEquals(8, service.maxSales(managerSales));
     }
+
     @Test
     void minSales() {
-        StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 9;
-        int actual = service.minSales(managerSales);
-        assertEquals(expected, actual);
+
+        assertEquals(9, service.minSales(managerSales));
     }
+
     @Test
     void averageAmount() {
-        StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
-        int actual = service.averageAmount(managerSales);
-        assertEquals(expected, actual);
+
+        assertEquals(15, service.averageAmount(managerSales));
     }
+
     @Test
     void belowAverageSales() {
-        StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 5;
-        int actual = service.belowAverageSales(managerSales);
-        assertEquals(expected, actual);
+
+        assertEquals(5, service.belowAverageSales(managerSales));
+    }
+
+    @Test
+    void aboveAverageSales() {
+
+        assertEquals(5, service.aboveAverageSales(managerSales));
     }
 }
