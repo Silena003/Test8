@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ru.netology.stats.StatsServiceTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in ru.netology.stats.StatsServiceTest
-belowAverageSales  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <5> but was: <2>
-	at ru.netology.stats.StatsServiceTest.belowAverageSales(StatsServiceTest.java:51)
-
